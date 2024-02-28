@@ -1,7 +1,7 @@
 export const CarritoApp = () => {
   return (
     <div>
-        <h1>Aplicacion de carrito</h1>
+        <h1>Aplicacion de carritos</h1>
         <hr />
     </div>
   )
