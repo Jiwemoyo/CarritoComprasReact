@@ -1,12 +1,14 @@
-import React from "react";
+import { ShoppingCart } from "@mui/icons-material";
+import { Badge } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
 export const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Carriot
-        </a>
+        <NavLink to={'/'} className="navbar-brand" href="#">
+          Carrito
+        </NavLink>
         <button
           className="navbar-toggler"
           type="button"
@@ -21,11 +23,16 @@ export const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <NavLink to={'/'} className="nav-link active" aria-current="page" href="#">
                 Compras
-              </a>
+              </NavLink>
             </li>
           </ul>
+          <NavLink to={'/carrito'}>
+            <Badge badgeContent={4} color="secondary">
+              <ShoppingCart color="action" />
+            </Badge>
+          </NavLink>
         </div>
       </div>
     </nav>
