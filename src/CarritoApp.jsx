@@ -1,9 +1,13 @@
+import { Routes, Route } from "react-router-dom";
+import { NavBar } from "./components/NavBar";
+
 export const CarritoApp = () => {
   return (
-    <div>
-        <h1>Aplicacion de carritos</h1>
-        <hr />
-        <p>Aqui estoy creando un parrafo que debo borrar despues </p>
-    </div>
-  )
-}
+    <>
+      <NavBar/>
+      <Routes>
+        <Route></Route>
+      </Routes>
+    </>
+  );
+};
