@@ -4,10 +4,10 @@ import '../styles/card.css'
 export const Card = ({ imagen, titulo, descripcion, precio }) => {
   const [added, setAdded] = useState(false);
   const clickAgregar=()=>{
-
+    setAdded(true)
   }
   const clickQuitar=()=>{
-    
+    setAdded(false)  
   }
   return (
     <div className="tarjeta">
