@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { CarritoContext } from "../Context/CarritoContext";
+
 export const CarritoPage = () => {
+  const {listaCompras, agregarCompra,aumentarCantidad,disminuirCantidad,eliminarCompra} = useContext(CarritoContext)
   return (
     <>
       <table className="table">
