@@ -1,14 +1,19 @@
 import { useState } from "react";
 import '../styles/card.css'
 
-export const Card = ({ imagen, titulo, descripcion, precio }) => {
+export const Card = ({ imagen, titulo, descripcion, precio,handleAgregar,handleQuitar,handleAumentar,handleDisminuir }) => {
   const [added, setAdded] = useState(false);
+
   const clickAgregar=()=>{
+    handleAgregar()
     setAdded(true)
   }
+
   const clickQuitar=()=>{
+    handleQuitar()
     setAdded(false)  
   }
+
   return (
     <div className="tarjeta">
       <img src={imagen} alt={titulo} className="tarjeta-imagen" />

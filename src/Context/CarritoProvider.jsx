@@ -3,6 +3,21 @@ import { CarritoContext } from "./CarritoContext";
 
 const initialState = [];
 
+const comprasReducer = (state = initialState, action = {}) => {
+  switch (action.type) {
+    case "[CARRITO] Agregar Compra":
+      return [...state, action.payload];
+    case "[CARRITO] Aumentar Cantidad Compra":
+      break;
+    case "[CARRITO] Disminuir Cantidad Compra":
+      break;
+    case "[CARRITO] Eliminar Compra":
+      return state.filter((compra) => compra.id !== action.payload);
+    default:
+      return state;
+  }
+};
+
 export const CarritoProvider = ({ children }) => {
   const [listaCompras, dispatch] = useReducer(comprasReducer, initialState);
 
@@ -35,22 +50,9 @@ export const CarritoProvider = ({ children }) => {
     };
     dispatch(action);
   };
-  const comprasReducer = (state = initialState, action = {}) => {
-    switch (action.type) {
-      case "[CARRITO] Agregar Compra":
-        return [...state, action.payload];
-      case "[CARRITO] Aumentar Cantidad Compra":
-        break;
-      case "[CARRITO] Disminuir Cantidad Compra":
-        break;
-      case "[CARRITO] Eliminar Compra":
-        return state.filter((compra) => compra.id !== action.payload);
-      default:
-        return state;
-    }
-  };
+
   return (
-    <CarritoContext.Provider value={{listaCompras, agregarCompra,aumentarCantidad,disminuirCantidad,eliminarCompra}}>
+    <CarritoContext.Provider value={{ listaCompras, agregarCompra, aumentarCantidad, disminuirCantidad, eliminarCompra }}>
       {children}
     </CarritoContext.Provider>
   );
